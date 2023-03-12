@@ -1,18 +1,41 @@
+@media (max-width: 819px) {
+	html {
+		font-size: 1rem;
+	}
+}
+
+@media (min-width: 820px) and (max-width: 1219px) {
+	html {
+		font-size: 1.2rem;
+	}
+}
+
+@media (min-width: 1220px) {
+	html {
+		font-size: 1.5rem;
+	}
+}
+
+h1 {
+	font-size: 3em;
+	text-align: center;
+	border-color: blue;
+	text-decoration: underline;
+}
+
 body {
 	background-image: url(images/back3.png);
 	margin: 2em 20em;
 	border: #2D572C 0.2em solid;
 }
 
-main, header {
-	background: #FFFAF0;
+.meme .meme-header .icon{
+	opacity: 0;
+	transition: all 1s; 
 }
 
-h1 {
-	text-align: center;
-	font-size: 3em;
-	border-color: blue;
-	text-decoration: underline;
+main, header {
+	background: #FFFAF0;
 }
 
 .meme {
@@ -42,8 +65,30 @@ h1 {
 	transition: all 1s;
 }
 
-.meme:hover .meme-header .icon {
-	transform: rotate(90deg);
+
+@media (hover: hover) {
+	.meme:hover .meme-header .icon {
+		transform: rotate(90deg);
+	}
+
+	.meme:hover .meme-header {
+		font-weight: bold;
+		color: #2D572C;
+	}
+
+	body:hover .meme .meme-header .icon{
+		opacity: 1;
+	}
+
+	.meme:hover label {
+		cursor: pointer;
+	}
+
+	.meme:hover .image {
+		transform: scale(1);
+		height: 40%;
+		width: 40%;
+	}
 }
 
 .meme {
@@ -61,15 +106,6 @@ h1 {
 	transition: all 1s; 
 }
 
-.meme:hover label {
-	cursor: pointer;
-}
-
-.meme:hover .image {
-	transform: scale(1);
-	height: 40%;
-	width: 40%;
-}
 
 .meme input {
 	display: none;
@@ -85,4 +121,7 @@ h1 {
 	transform: rotate(90deg);
 }
 
-
+.meme:has(input:checked) .meme-header {
+	color: #2D572C;
+	font-weight: bold;
+}
