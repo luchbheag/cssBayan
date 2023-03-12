@@ -1,0 +1,88 @@
+body {
+	background-image: url(images/back3.png);
+	margin: 2em 20em;
+	border: #2D572C 0.2em solid;
+}
+
+main, header {
+	background: #FFFAF0;
+}
+
+h1 {
+	text-align: center;
+	font-size: 3em;
+	border-color: blue;
+	text-decoration: underline;
+}
+
+.meme {
+	padding: 1em 1em;
+}
+
+.meme .meme-header {
+	border-color: red;
+	margin: 0.5em 0;
+	padding: 0.3em 0;
+	width: 100%;	
+	display: flex;
+	justify-content: space-between;
+	border-top: #2D572C 0.15em solid;
+}
+
+.meme .meme-header h2 {
+	font-size: 2em;
+	float: left;
+}
+
+.meme .meme-header .icon {
+	width: 2rem;
+	height: 2rem;
+	float: right;
+	transform: rotate(0);
+	transition: all 1s;
+}
+
+.meme:hover .meme-header .icon {
+	transform: rotate(90deg);
+}
+
+.meme {
+	position: relative;
+	overflow: hidden;
+	cursor: default;
+}
+
+.slider .image {
+	display: block;
+	margin: 0.5em auto;
+	height: 0;
+	width: 0;
+	transform: scale(0.5);
+	transition: all 1s; 
+}
+
+.meme:hover label {
+	cursor: pointer;
+}
+
+.meme:hover .image {
+	transform: scale(1);
+	height: 40%;
+	width: 40%;
+}
+
+.meme input {
+	display: none;
+}
+
+.meme:has(input:checked) .slider .image {
+	transform: scale(1);
+	height: 40%;
+	width: 40%;
+}
+
+.meme:has(input:checked) .meme-header .icon {
+	transform: rotate(90deg);
+}
+
+
